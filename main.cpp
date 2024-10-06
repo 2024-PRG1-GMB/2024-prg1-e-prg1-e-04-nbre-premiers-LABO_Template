@@ -1,3 +1,11 @@
+/*
+* \file main.cpp
+* \version 1.0.0
+* \author Cedrick Feze
+* \date : 06.10.2024
+* \brief : Lister les nombres premiers entre 2 et et la valeur entrée par l'utilisateur
+*/
+
 #include <iostream>
 #include <cstdlib>
 
@@ -9,7 +17,7 @@ int main() {
     unsigned int limite;
     cin >> limite;
 
-    if (limite < 2 || limite > 1000) {
+    while (limite < 2 || limite > 1000) {
         cout << "Entrer une valeur [2-1000] : " << endl;
         cin >> limite;
     }
@@ -17,9 +25,9 @@ int main() {
     cout << "Voici la liste des nombres premiers" << endl;
     for (int i = 2; i <= limite; i++) {
 
-        // 2 et 3 sont premiers
+        // 2 est premier
         if (i == 2) {
-            cout << i << " ";
+            cout << '\t' << i << "  " << '\t';
         }
 
         // Vérifie si le nombre est pair
@@ -36,7 +44,7 @@ int main() {
 
         // Afficher le nombre s'il est premier
         if (est_premier) {
-            cout << i << "   ";
+            cout << '\t' << i << "  " << '\t';
         }
     }
     cout << endl;
