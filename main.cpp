@@ -4,6 +4,7 @@
 using namespace std;
 
 int main() {
+
     cout << "Entrer une valeur [2-1000] : ";
     unsigned int limite;
     cin >> limite;
@@ -13,10 +14,11 @@ int main() {
         cin >> limite;
     }
 
-    cout << "Voici la liste des nombres premiers" << limite << endl;
+    cout << "Voici la liste des nombres premiers" << endl;
     for (int i = 2; i <= limite; i++) {
+
         // 2 et 3 sont premiers
-        if (i == 2 ) {
+        if (i == 2) {
             cout << i << " ";
         }
 
@@ -34,10 +36,20 @@ int main() {
 
         // Afficher le nombre s'il est premier
         if (est_premier) {
-            cout << i << " ";
+            cout << i << "   ";
         }
     }
     cout << endl;
+
+    cout << " Voulez-vous recommencer [O/N] : ";
+    char reponse;
+    cin >> reponse;
+    if (reponse == 'N') {
+        cout << "Fin du programme" << endl;
+    }else if (reponse != 'O') {
+        cout << "Entrer une valeur [2-1000] : " << endl;
+        cin >> limite;
+    }
 
     return EXIT_SUCCESS;
 }
