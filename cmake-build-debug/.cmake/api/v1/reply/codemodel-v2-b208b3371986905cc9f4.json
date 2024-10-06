@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.29"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "prg1_e_04_nbre_premiers_cedrickdev",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "prg1_e_04_nbre_premiers_cedrickdev::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-prg1_e_04_nbre_premiers_cedrickdev-Debug-8d8de8289ff7810277c4.json",
+					"name" : "prg1_e_04_nbre_premiers_cedrickdev",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/feze/OneDrive - HESSO/Applications/HEIG-VD Courses/1st Year/1st semester/PRG-1/Laboratoires/prg1-e-04-nbre-premiers-cedrickdev/cmake-build-debug",
+		"source" : "C:/Users/feze/OneDrive - HESSO/Applications/HEIG-VD Courses/1st Year/1st semester/PRG-1/Laboratoires/prg1-e-04-nbre-premiers-cedrickdev"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
