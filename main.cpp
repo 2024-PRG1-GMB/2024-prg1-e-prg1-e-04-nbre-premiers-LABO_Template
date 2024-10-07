@@ -4,7 +4,7 @@
  * @brief       Programme qui permet de trouver les nombres premiers
  *              entre 2 bornes
  *
- * @version     1.1
+ * @version     1.2
  * @date        2024-10-04
  *
  * @copyright   Copyright (c) 2024
@@ -16,10 +16,13 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
 
     // Déclaration des variables
+    // Weak Warning: Variable 'borne_x' can be moved to inner scope : L 22-23
+    // variable paramétrique du programme, executée qu'une fois.
+    constexpr unsigned int borne_inferieur = 2;
+    constexpr unsigned int borne_superieur = 1e3;
     unsigned int user_value = 1;
 
     char user_restart = 'O';
@@ -27,16 +30,9 @@ int main()
     cout << "Ce programme ..." << endl
          << endl;
 
-    do
-    {
-        // Variable interne aux boucles
-        constexpr unsigned int borne_inferieur = 2;
-        constexpr unsigned int borne_superieur = 1e3;
+    do {
 
-        // Demande d'une borne supérieur de recherche
-        // & control des valeurs d'entrée
-        do
-        {
+        do {
             cout << "entrer une valeur [" << borne_inferieur << " ; "
                  << borne_superieur << "] : ";
 
@@ -47,26 +43,24 @@ int main()
 
         int count = 0; // variable pour le formatage de la sortie
 
-        for (unsigned int candidat_premier = 2; candidat_premier <= user_value; ++candidat_premier)
-        {
+        for (unsigned int candidat_premier = 2; candidat_premier <= user_value; ++candidat_premier) {
+            
             bool est_nombre_premier = true;
-            for (unsigned int diviseur = 2; diviseur <= candidat_premier / 2; ++diviseur)
-            {
+            unsigned int diviseur_max = candidat_premier / 2;
 
-                if (candidat_premier % diviseur == 0)
-                {
+            for (unsigned int diviseur = 2; diviseur <= diviseur_max; ++diviseur) {
+
+                if (candidat_premier % diviseur == 0) {
                     est_nombre_premier = false;
                     break;
                 }
             }
 
-            if (est_nombre_premier)
-            {
+            if (est_nombre_premier) {
                 cout << '\t' << candidat_premier << " ";
                 ++count;
 
-                if (count % 5 == 0)
-                {
+                if (count % 5 == 0) {
                     cout << endl;
                 }
             }
@@ -75,10 +69,8 @@ int main()
         if (count % 5 != 0)
             cout << endl;
 
-        // Demmande de relancer le program
-        // & control du caractère entré
-        do
-        {
+
+        do {
             cout << "Voulez-vous recommencer [O/N] : ";
             cin >> user_restart;
         } while (user_restart != 'N' and user_restart != 'O');
