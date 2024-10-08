@@ -1,0 +1,6 @@
+#debug files Clion
+
+*.exe
+*.idea/
+*.txt
+*cmake-build-debug/
