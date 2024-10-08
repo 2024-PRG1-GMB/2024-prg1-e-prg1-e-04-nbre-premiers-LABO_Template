@@ -6,7 +6,8 @@ using namespace std;
 
 int main() {
 
-    int limite, nbr, cpt, i;
+    int limite;
+    int compteur_colonnes;
     char choix;
 
     cout << "Ce programme..." << endl;
@@ -18,34 +19,38 @@ int main() {
         cout << "entrer une valeur [2-1000] :";
         cin >> limite;
     }
-    do {
-        cpt = 0;
-        nbr = limite;
+    for (int nbr = 2; nbr <= limite; nbr++) {
+        bool nbr_premier = true;
 
-        for (i = 1; i <= nbr; i++) {
+        for (int i = 2; i * i <= nbr; i++) {
             if (nbr % i == 0) {
-                cpt++;
+                nbr_premier = false;
+                break;
             }
         }
 
-        if (cpt == 2) {
+        if (nbr_premier) {
             cout << '\t' << nbr << " ";
+            compteur_colonnes++;
+
+            if (compteur_colonnes == 5) {
+                cout << endl;
+                compteur_colonnes = 0;
+            }
         }
+    }
+    cout << endl;
 
-    } while(nbr <= limite);
-
-    cout << "Voulez-vous recommencer [O/N] : "<< endl;
-    cin >> choix;
-    do {
+    while(choix != 'O' || choix != 'N'){
         if(choix == 'O'){
             return main();
         }else if(choix == 'N'){
-            cout << "fin du programme" << endl;
+            break;
         }else{
             cout << "Voulez-vous recommencer [O/N] : "<< endl;
             cin >> choix;
         }
-    }while(choix != 'O' || choix != 'N');
+    };
 
     cout << "fin du programme" << endl;
 
