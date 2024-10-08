@@ -16,7 +16,7 @@ int main() {
     const int limite_haute = 1000;
     int saisie_limite_utilisateur;
 
-    
+
     do {
         cout << "Veuillez entrez une valeure limite entre 2 et 1000 : " << endl;
         cin >> saisie_limite_utilisateur;
